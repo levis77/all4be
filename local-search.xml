@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>铍金属的太空之旅</title>
+    <link href="/all4be/2023/12/01/my-blog-be-space/"/>
+    <url>/all4be/2023/12/01/my-blog-be-space/</url>
+    
+    <content type="html"><![CDATA[<img src="/all4be/2023/12/01/my-blog-be-space/james_web.jpg" class="" title="詹姆斯韦伯太空望远镜">  <h2 id="铍金属"><a href="#铍金属" class="headerlink" title="铍金属"></a>铍金属</h2><blockquote><p>铍在知识的不断追求中担负着传奇的角色。从最早美国宇航局用铍做为隔热盾用于保护水星飞船的再驶入开始，科学家、设计师和工程师们不断使用这种高刚度、超轻的多功能材料达到他们最苛刻的设计挑战。</p></blockquote><h2 id="地球轨道"><a href="#地球轨道" class="headerlink" title="地球轨道"></a>地球轨道</h2><blockquote><p>美国宇航局目前使用铍材料的装备包括航天飞机，铍的使用增强了航天飞机的强度，散热功能，减轻了航天飞机窗和门系统的重量。此外铍组件还使用在斯皮策太空望远镜(Spitzer Spce Telescope).</p></blockquote><h2 id="漫游红色星球"><a href="#漫游红色星球" class="headerlink" title="漫游红色星球"></a>漫游红色星球</h2><blockquote><p>两辆火星车”好奇号”和”机遇号”的成果都远远超出了原先的预期。铍铝组件帮助保护了火星车安全降落，并成功打开斜坡车道。 铍铝部件还使用在火星车的勘测工具当中用于研究岩石，使我们进一步了解了火星。</p></blockquote><h2 id="修复哈勃望远镜"><a href="#修复哈勃望远镜" class="headerlink" title="修复哈勃望远镜"></a>修复哈勃望远镜</h2><blockquote><p>当哈勃太空望远镜看不清楚时，望远镜的新“校正镜头”被安装在铍结构件里，以满足低重量、高刚度和抵抗极端温度带来的尺寸扭曲的要求。</p></blockquote><h2 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h2><blockquote><p>下一代詹姆斯·韦伯(James Webb)太空望远镜(JWST)计划部署在2014,它将会使用直径为6.5米的铍镜，这将使望远镜的识别能力比之前提高200倍。这种反射镜必须结合高刚度、轻量化特性和满足非常光滑、精确无缺陷的表面要求。而且他们须在永远不会超过零下253摄氏度的宇宙深渊保持绝佳的视觉质量数十年。</p></blockquote><h2 id="再现“大爆炸”环境"><a href="#再现“大爆炸”环境" class="headerlink" title="再现“大爆炸”环境"></a>再现“大爆炸”环境</h2><blockquote><p>科学家利用使用铍组件的粒子加速器来保证高能亚原子粒子碰撞，再现“大爆炸”后的环境，为找寻宇宙如何形成提供线索。欧洲核子研究组织（CERN）在瑞士日内瓦投资100亿美元建造了大型强子对撞机装置，其中对撞实验的区域使用了铍管进行环绕。</p></blockquote>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>纯铍</tag>
+      
+      <tag>航天</tag>
+      
+      <tag>航空</tag>
+      
+      <tag>铍金属</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo 命令集</title>
+    <link href="/all4be/2023/11/28/hello-world/"/>
+    <url>/all4be/2023/11/28/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
