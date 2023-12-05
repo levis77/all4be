@@ -4,6 +4,89 @@
   
   
   <entry>
+    <title>my-blog-pdf</title>
+    <link href="/all4be/2023/12/05/my-blog-pdf/"/>
+    <url>/all4be/2023/12/05/my-blog-pdf/</url>
+    
+    <content type="html"><![CDATA[ <!-- 在线显示PDF --> <!-- 第一种方式，可调整pdf显示的大小，比较灵活 --> <embed src="./test.pdf" width="100%" height="750" type="application/pdf"> <!-- 第二种方式 --> <!-- <div class="row">    <embed src="./test.pdf" width="100%" height="550" type="application/pdf"></div> -->]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>GitHub Pages，轻松搭建个人博客</title>
+    <link href="/all4be/2023/12/04/my-blog-hexo-guide/"/>
+    <url>/all4be/2023/12/04/my-blog-hexo-guide/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>Hexo 是一个快速、简单且功能强大的博客框架。使用 Markdown 解析文档，Hexo 能在几秒内生成带有自定义主题并集成各项功能的网站页面。</p></blockquote><p>本文采用 Github Pages + Hexo 的方式，搭建个人博客</p><h2 id="1-使用个人-GitHub-创建仓库，并配置-GitHub-Pages"><a href="#1-使用个人-GitHub-创建仓库，并配置-GitHub-Pages" class="headerlink" title="1. 使用个人 GitHub 创建仓库，并配置 GitHub Pages"></a>1. 使用个人 GitHub 创建仓库，并配置 GitHub Pages</h2><blockquote><p>注意：此仓库用于存放个人博客页面，仓库名必须使用 &lt;GitHub用户名&gt;.github.io 格式。</p></blockquote><p>仓库创建完成后，可以在仓库根路径下创建一个名为 index.html 的静态 HTML 文件来验证个人博客搭建是否成功。</p><pre><code class="hljs">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;title&gt;Someone&#39;s Blog&lt;/title&gt;&lt;/head&gt;&lt;body&gt;    &lt;h1&gt;Hello, Blog World ~&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><p>在 &lt;GitHub用户名&gt;.github.io 仓库对应的 GitHub Pages 设置页面 (访问路径为 Settings -&gt; Pages) 可以找到个人博客的主页访问地址：https:&#x2F;&#x2F;&lt;GitHub 用户名&gt;.github.io。</p><p>若能在浏览器中正常访问该地址，即代表个人 GitHub Pages 搭建成功。</p><h2 id="2-安装-Git-和-NodeJS"><a href="#2-安装-Git-和-NodeJS" class="headerlink" title="2. 安装 Git 和 NodeJS"></a>2. 安装 Git 和 NodeJS</h2><p>Hexo 基于 NodeJS 运行，因此在开始前，需要安装 NodeJS 和 npm 工具。安装教程可参考如下步骤。</p><p>笔者的本地环境为 Windows 11 + PowerShell，包管理工具使用 Scoop，NodeJS 通过 nvm 管理，下述安装步骤需要在 PowerShell 里执行。</p><pre><code class="hljs">scoop install git # 安装Gitscoop install nvm # 安装 nvmnvm list available # 查看可用的 NodeJS 版本，这里建议使用 LTS 版本nvm install 16.18.0 # 安装 NodeJS，我这里安装的是最新 LTS 版本 16.18.0sudo nvm use 16.18.0 # NodeJS 版本使用 16.18.0，注意这里需要管理员权限，可以先使用 scoop 安装 sudo 这个工具</code></pre><h3 id="一、安装-Hexo"><a href="#一、安装-Hexo" class="headerlink" title="一、安装 Hexo"></a>一、安装 Hexo</h3><blockquote><p>此处只列出本次所需的关键步骤，更多说明详见官方文档：<a href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p></blockquote><p>1.全局安装 hexo-cli 工具  </p><pre><code class="hljs">npm install -g hexo-clihexo -v # 查看版本，目前最新版本为 4.3.0  </code></pre><p>2.创建一个项目 my-blog 并初始化  </p><pre><code class="hljs">hexo init my-blogcd my-blognpm install</code></pre><p>3.生成网页文件 &amp; 本地启动  </p><pre><code class="hljs">hexo generate # 生成页面，此命令可以简写为 `hexo g`hexo server # 本地启动，可简写为 `hexo s`</code></pre><p>4.本地访问  </p><p>浏览器访问：<a href="http://localhost:4000/">http://localhost:4000/</a> 会看到一个比较简陋的页面。没关系，接下来介绍如何更换主题。</p><h3 id="二、安装-配置主题"><a href="#二、安装-配置主题" class="headerlink" title="二、安装 &amp; 配置主题"></a>二、安装 &amp; 配置主题</h3><p>按照前两个小节所介绍的步骤，我们已经能够通过本地访问博客页面了，但 Hexo 默认的主题不太好看。</p><p>好在官方提供了数百种主题任君选择，可以根据个人喜好更换，具体可以点击 (<a href="https://hexo.io/themes/">https://hexo.io/themes/</a>) 查看。</p><p>本文将主要介绍 Fluid 主题的安装与配置。</p><ol><li>安装 Fluid 主题</li></ol><p>官方提供了两种安装方式，这里使用官方推荐的 npm 方式。</p><pre><code class="hljs">npm install --save hexo-theme-fluid</code></pre><p>在博客根路径下创建 _config.fluid.yml 文件，并将主题的 .&#x2F;node_modules&#x2F;hexo-theme-fluid&#x2F;_config.yml 文件内容复制过去。</p><ol start="2"><li>指定主题</li></ol><p>将如下修改应用到 Hexo 博客目录中的 _config.yml:  </p><pre><code class="hljs">theme: fluid  # 指定主题language: zh-CN  # 指定语言，会影响主题显示的语言，按需修改</code></pre><ol start="3"><li>创建「关于页」</li></ol><p>首次使用主题的「关于页」需要手动创建。  </p><pre><code class="hljs">hexo new page about</code></pre><p>创建成功后修改 &#x2F;source&#x2F;about&#x2F;index.md，添加 layout 属性。修改后的文件示例如下：  </p><pre><code class="hljs">---title: 标题layout: about---这里写关于页的正文，支持 Markdown, HTML</code></pre><p>需要注意的是， layout: about 必须存在，并且不能修改成其他值，否则不会显示头像等样式。</p><ol start="4"><li>更新 Fluid 主题</li></ol><p>通过 npm 安装主题的情况，可在博客目录下执行命令：</p><pre><code class="hljs">npm update --save hexo-theme-fluid</code></pre><ol start="5"><li>本地启动</li></ol><p>执行如下命令重新生成页面，并启动 Hexo 服务。</p><pre><code class="hljs">hexo cleanhexo ghexo s</code></pre><p>再次通过浏览器访问 <a href="http://localhost:4000/">http://localhost:4000</a> , 便可以看到页面变得美观多了。</p><h3 id="三、创建文章"><a href="#三、创建文章" class="headerlink" title="三、创建文章"></a>三、创建文章</h3><p>修改 _config.yml 文件。这项配置是为了在生成文章的同时，生成一个同名的资源目录用于存放图片等资源文件。</p><pre><code class="hljs">post_asset_folder: true</code></pre><p>创建文件名为 my-blog-build-remark 文章。</p><pre><code class="hljs">hexo new post my-blog-build-remark</code></pre><p>设置文章的标题及其他元数据信息。</p><pre><code class="hljs">---title: 基于 GitHub Pages + Hexo 搭建个人博客date: 2022-10-16 19:42:53tags: [&#39;hexo&#39;,&#39;fluid&#39;]---</code></pre><p>如上命令执行成功后，在 source&#x2F;_posts&#x2F; 目录下生成了一个 Markdown 文件和一个同名的资源目录。</p><p>在 source&#x2F;_posts&#x2F;my-blog-build-remark 目录中放置一个图片文件 posts-file-tree.png，整体目录结构如下：</p><pre><code class="hljs">$ source/_posts (main)&gt; tree.├── hello-world.md├── my-blog-build-remark│   └── posts-file-tree.png└── my-blog-build-remark.md</code></pre><p>然后在文章的 Markdown 文件里，通过以下方式即可引用对应的图片。</p><pre><code class="hljs">&#123;% asset_img posts-file-tree.png 目录结构 %&#125;</code></pre><p>图片的引用方式也不只一种，更多详细介绍可参考官方文档 (<a href="https://hexo.io/zh-cn/docs/asset-folders.html)%E3%80%82">https://hexo.io/zh-cn/docs/asset-folders.html)。</a></p><p>文章创建并编辑好之后，就可以通过 hexo g &amp;&amp; hexo s 命令启动服务，并在本地预览文章。</p><h3 id="四、配置指南"><a href="#四、配置指南" class="headerlink" title="四、配置指南"></a>四、配置指南</h3><p> 如无特殊说明，如下配置文件一律默认为主题配置文件_config.fluid.yml。</p><ol><li>页面 title 修改</li></ol><p>修改 _config.yml 文件。</p><pre><code class="hljs">title: &quot;请填写你自己的博客标题&quot;subtitle: &#39;&#39;description: &#39;&#39;keywords:author: 请填写你自己的署名language: zh-CNtimezone: &#39;&#39;</code></pre><p> 2.博客标题<br> 页面左上角的博客标题，默认使用站点配置_config.yml 中的 title。此配置同时控制着网页在浏览器标签中的标题，如需单独区别设置，可在主题配置中进行设置.  </p><pre><code class="hljs">navbar:blog_title: &quot;请填写你自己的博客标题&quot;  </code></pre><ol start="3"><li>首页 - Slogan（打字机）</li></ol><p>首页大图中的标题文字，可在主题配置中设定是否开启。这里支持配置固定的 text 或者从远程 api 实时获取，优先级 api &gt; text。</p><pre><code class="hljs">index:slogan:    enable: true    text: &quot;Please type your slogan here.&quot;    api:    enable: true    url: &quot;https://v1.hitokoto.cn/&quot;    method: &quot;GET&quot;    headers: &#123;&#125;    keys: [&quot;hitokoto&quot;]</code></pre><h3 id="五、网页访问统计"><a href="#五、网页访问统计" class="headerlink" title="五、网页访问统计"></a>五、网页访问统计</h3><p>目前 Fluid 支持多种统计网站，本文仅介绍 LeanCloud 的配置。</p><p>使用 LeanCloud 之前，需要先注册账户并新建应用（需实名认证），可自行前往官网完成。</p><p>在 【控制台 -&gt; 应用 -&gt; 设置 -&gt; 应用凭证】页面中找到对应的 AppID、AppKey、REST API 服务器地址等信息填入主题配置中。  </p><pre><code class="hljs">web_analytics:  # 网页访问统计leancloud:    app_id: # AppID    app_key: # AppKey    # REST API 服务器地址，国际版不填    # Only the Chinese mainland users need to set    server_url: # REST API 服务器地址    # 开启后不统计本地路径( localhost 与 127.0.0.1 )    # If true, ignore localhost &amp; 127.0.0.1    ignore_local: true</code></pre><p>如无特殊需要，记得配置 ignore_local: true，这样 LeanCloud 在 localhost 域名下访问不会增加数据。</p><ol><li>展示 PV 与 UV 统计</li></ol><p>页脚可以展示 PV 与 UV 统计数据，目前支持两种数据来源：LeanCloud 与 不蒜子。  </p><pre><code class="hljs">footer:statistics:    enable: true    source: &quot;leancloud&quot;    pv_format: &quot;总访问量 &#123;&#125; 次&quot;    uv_format: &quot;总访客数 &#123;&#125; 人&quot;</code></pre><p>2.展示文章日期 &#x2F; 字数 &#x2F; 阅读时长 &#x2F; 阅读数  </p><pre><code class="hljs">post:meta:    author: # 作者，优先根据 front-matter 里 author 字段，其次是 hexo 配置中 author 值    enable: false    date: # 文章日期，优先根据 front-matter 里 date 字段，其次是 md 文件日期    enable: true    format: &quot;LL a&quot; # 格式参照 ISO-8601 日期格式化 See: http://momentjs.cn/docs/#/parsing/string-format/    wordcount: # 字数统计    enable: true    format: &quot;&#123;&#125; 字&quot;    min2read: # 估计阅读全文需要的时长    enable: true    awl: 2    wpm: 60    format: &quot;&#123;&#125; 分钟&quot;    views: # 浏览量计数    enable: true    source: &quot;leancloud&quot;    format: &quot;&#123;&#125; 次&quot;</code></pre><ol start="3"><li>文章评论功能</li></ol><p>评论功能需要在主题配置中开启并指定评论插件，这里使用基于 LeanCloud 的 Valine。</p><pre><code class="hljs">post:comments:    enable: true    # 指定的插件，需要同时设置对应插件的必要参数    # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus    type: valine# Valine# 基于 LeanCloud# See: https://valine.js.org/valine:appId: # LeanCloud AppIDappKey: # LeanCloud AppKey</code></pre><h3 id="六、发布-GitHub-Pages"><a href="#六、发布-GitHub-Pages" class="headerlink" title="六、发布 GitHub Pages"></a>六、发布 GitHub Pages</h3><p>1.安装 hexo-deployer-git  </p><pre><code class="hljs">npm install hexo-deployer-git --save</code></pre><p>2.修改站点配置 _config.yml。</p><pre><code class="hljs">deploy:type: gitrepo: &lt;repository url&gt; # https://github.com/&lt;GitHub用户名&gt;/&lt;GitHub用户名&gt;.github.io.gitbranch: [branch]token: [token]</code></pre><p>3.生成站点文件并推送至远程 GitHub 仓库。 </p><pre><code class="hljs">hexo cleanhexo deploy</code></pre><p> 登入 Github，在库设置（Repository Settings）中将默认分支设置为 _config.yml 配置中的分支名称。</p><p>只需稍等片刻，个人博客站点就会显示在 Github Pages 中。</p><h3 id="七、参考资料"><a href="#七、参考资料" class="headerlink" title="七、参考资料"></a>七、参考资料</h3><p>Hexo Docs：<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a><br>Hexo Fluid 用户手册：<a href="https://fluid-dev.github.io/hexo-fluid-docs/">https://fluid-dev.github.io/hexo-fluid-docs/</a></p><p>————————————————<br>原文链接：<a href="https://blog.csdn.net/crg18438610577/article/details/130610942">https://blog.csdn.net/crg18438610577/article/details/130610942</a> </p>]]></content>
+    
+    
+    <categories>
+      
+      <category>IT电脑</category>
+      
+      <category>博客</category>
+      
+      <category>HEXO教程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+      <tag>GitHub</tag>
+      
+      <tag>博客</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>铍金属的国防和军事应用</title>
+    <link href="/all4be/2023/12/04/my-blog-be-aplication-military/"/>
+    <url>/all4be/2023/12/04/my-blog-be-aplication-military/</url>
+    
+    <content type="html"><![CDATA[<img src="/all4be/2023/12/04/my-blog-be-aplication-military/uses-applications-defense.jpg" class="" title="无人机应用"><hr><blockquote><p>铍对国家的国防和国土安全至关重要。美国国防部在2008年报告中指出，在其军事系统中使用的所有金属当中，纯铍被认为是关键和战略性金属。美国国防部表示,“铍对国防系统至关重要，其执行的功能是其它金属材料无法替代的。”</p></blockquote><h1 id="军事系统"><a href="#军事系统" class="headerlink" title="军事系统"></a>军事系统</h1><blockquote><p>军事系统严重依赖电子设备,用于导航、目标获取和射击。坚硬、轻巧的铍金属部件确保关键设备在极端条件下操作精确无误。</p></blockquote><h2 id="战斗机"><a href="#战斗机" class="headerlink" title="战斗机"></a>战斗机</h2><blockquote><p>在军用战斗机中，纯铍减轻了航空器对速度和机动性至关重要的参数–重量，同时也确保了战斗机锐利的瞄准和打击能力。铍铜合金用于固定飞机机翼和战斗机中的电子连接器、紧固件和结构部件，应用包括：</p></blockquote><blockquote><p>F-35战斗机 闪电Ⅱ（英文：F-35，绰号：Lightning II）&#x2F;联合攻击机<br>F-22战斗机 猛禽   （英文：F-22 ， 绰号：Raptor)<br>F-18超级大黄蜂     (英文：F&#x2F;A-18 Strike Fighter，绰号：Hornet)<br>F-16战隼              ( 英文：F-16 fighter，绰号：Fighting Falcon)<br>F-15鹰。       (英文：F-15 Fighter，绰号：Eagle)&#x2F;麦道F-15鹰</p></blockquote><h2 id="直升机"><a href="#直升机" class="headerlink" title="直升机"></a>直升机</h2><blockquote><p>在军用直升机的光学系统中，铍部件可以增强监视和瞄准系统，保护机组安全。</p></blockquote><h2 id="无人机"><a href="#无人机" class="headerlink" title="无人机"></a>无人机</h2><blockquote><p>无人机航空系统依靠铍光学系统进行实时成像，并在监视和侦察飞行中瞄准目标。</p></blockquote><h2 id="坦克"><a href="#坦克" class="headerlink" title="坦克"></a>坦克</h2><p>对于移动中的作战坦克，坚硬的铍镜可以抑制振动，并为瞄准和射击控制提供无抖动的光学路径。</p><h2 id="爆破物-地雷"><a href="#爆破物-地雷" class="headerlink" title="爆破物 &amp; 地雷"></a>爆破物 &amp; 地雷</h2><blockquote><p>铍也是探测和摧毁简易爆炸装置(IED)和战术地雷的机载设备的组成部分。</p></blockquote><h2 id="导弹防御系统"><a href="#导弹防御系统" class="headerlink" title="导弹防御系统"></a>导弹防御系统</h2><blockquote><p>在新兴的导弹防御系统中，铍对于确保导向、瞄准和最终摧毁导弹威胁的首要防御至关重要。</p></blockquote><h2 id="军用卫星"><a href="#军用卫星" class="headerlink" title="军用卫星"></a>军用卫星</h2><blockquote><p>美国军用卫星采用铍金属提供结构和尺寸稳定性，以及太空中传输情报的电子系统可靠性。</p></blockquote><h2 id="军事通讯"><a href="#军事通讯" class="headerlink" title="军事通讯"></a>军事通讯</h2><blockquote><p>指挥和控制通信：军事通信依赖于网络集线器、交换机和路由器中的铜铍合金。这种材料的强度、导电性和导热性确保了装备可靠性，同时最大限度地提高了信号速度和带宽。</p></blockquote><h1 id="国土安全："><a href="#国土安全：" class="headerlink" title="国土安全："></a>国土安全：</h1><blockquote><p>在机场、港口、地铁、边境站和其他公共区域，铍和含铍材料对监视、检查和应对措施等安全事宜起着至关重要的作用。在全球数千万个安检口，采用铍部件的X射线机,分拣设备,扫描仪用于检查行李和货物中的非法危险物质.</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>金属</category>
+      
+      <category>铍合金</category>
+      
+      <category>纯铍</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>纯铍</tag>
+      
+      <tag>军事</tag>
+      
+      <tag>国防</tag>
+      
+      <tag>铍金属</tag>
+      
+      <tag>战斗机</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>铍金属的太空之旅</title>
     <link href="/all4be/2023/12/01/my-blog-be-space/"/>
     <url>/all4be/2023/12/01/my-blog-be-space/</url>
@@ -11,16 +94,26 @@
     <content type="html"><![CDATA[<img src="/all4be/2023/12/01/my-blog-be-space/james_web.jpg" class="" title="詹姆斯韦伯太空望远镜">  <h2 id="铍金属"><a href="#铍金属" class="headerlink" title="铍金属"></a>铍金属</h2><blockquote><p>铍在知识的不断追求中担负着传奇的角色。从最早美国宇航局用铍做为隔热盾用于保护水星飞船的再驶入开始，科学家、设计师和工程师们不断使用这种高刚度、超轻的多功能材料达到他们最苛刻的设计挑战。</p></blockquote><h2 id="地球轨道"><a href="#地球轨道" class="headerlink" title="地球轨道"></a>地球轨道</h2><blockquote><p>美国宇航局目前使用铍材料的装备包括航天飞机，铍的使用增强了航天飞机的强度，散热功能，减轻了航天飞机窗和门系统的重量。此外铍组件还使用在斯皮策太空望远镜(Spitzer Spce Telescope).</p></blockquote><h2 id="漫游红色星球"><a href="#漫游红色星球" class="headerlink" title="漫游红色星球"></a>漫游红色星球</h2><blockquote><p>两辆火星车”好奇号”和”机遇号”的成果都远远超出了原先的预期。铍铝组件帮助保护了火星车安全降落，并成功打开斜坡车道。 铍铝部件还使用在火星车的勘测工具当中用于研究岩石，使我们进一步了解了火星。</p></blockquote><h2 id="修复哈勃望远镜"><a href="#修复哈勃望远镜" class="headerlink" title="修复哈勃望远镜"></a>修复哈勃望远镜</h2><blockquote><p>当哈勃太空望远镜看不清楚时，望远镜的新“校正镜头”被安装在铍结构件里，以满足低重量、高刚度和抵抗极端温度带来的尺寸扭曲的要求。</p></blockquote><h2 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h2><blockquote><p>下一代詹姆斯·韦伯(James Webb)太空望远镜(JWST)计划部署在2014,它将会使用直径为6.5米的铍镜，这将使望远镜的识别能力比之前提高200倍。这种反射镜必须结合高刚度、轻量化特性和满足非常光滑、精确无缺陷的表面要求。而且他们须在永远不会超过零下253摄氏度的宇宙深渊保持绝佳的视觉质量数十年。</p></blockquote><h2 id="再现“大爆炸”环境"><a href="#再现“大爆炸”环境" class="headerlink" title="再现“大爆炸”环境"></a>再现“大爆炸”环境</h2><blockquote><p>科学家利用使用铍组件的粒子加速器来保证高能亚原子粒子碰撞，再现“大爆炸”后的环境，为找寻宇宙如何形成提供线索。欧洲核子研究组织（CERN）在瑞士日内瓦投资100亿美元建造了大型强子对撞机装置，其中对撞实验的区域使用了铍管进行环绕。</p></blockquote>]]></content>
     
     
+    <categories>
+      
+      <category>金属</category>
+      
+      <category>铍合金</category>
+      
+      <category>纯铍</category>
+      
+    </categories>
+    
     
     <tags>
       
       <tag>纯铍</tag>
       
+      <tag>铍金属</tag>
+      
       <tag>航天</tag>
       
       <tag>航空</tag>
-      
-      <tag>铍金属</tag>
       
     </tags>
     
@@ -35,6 +128,16 @@
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
+    
+    <categories>
+      
+      <category>IT电脑</category>
+      
+      <category>博客</category>
+      
+      <category>HEXO命令集</category>
+      
+    </categories>
     
     
   </entry>
